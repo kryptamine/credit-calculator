@@ -11,6 +11,9 @@ use App\Models\Request as RequestModel;
  */
 class MainController extends Controller
 {
+    const MONTH_PER_YEAR  = 12;
+    const ROUND_PRECISION = 2;
+
     /**
      * @param CreditCalculateRequest $request
      * @param RequestModel           $requestModel
@@ -27,14 +30,14 @@ class MainController extends Controller
 
         $requestModel->fill($request->only(['sum', 'range', 'rate', 'month', 'year']))->save();
 
-        $monthRate   = ($rate / 100 / 12);
+        $monthRate   = ($rate / 100 / static::MONTH_PER_YEAR);
         $coefficient = ($monthRate * pow((1 + $monthRate), $range)) / (pow((1 + $monthRate), $range) - 1);
-        $payment     = round($coefficient * $sum, 2);
+        $payment     = round($coefficient * $sum, static::ROUND_PRECISION);
         $result      = [];
 
         foreach (range(1, $range) as $i) {
-            $percentPayment = round($sum * $monthRate, 2);
-            $creditPayment  = round($payment - $percentPayment, 2);
+            $percentPayment = round($sum * $monthRate, static::ROUND_PRECISION);
+            $creditPayment  = round($payment - $percentPayment, static::ROUND_PRECISION);
             $result[$i]     = [
                 'position'        => $i,
                 'month'           => $month,
@@ -48,7 +51,7 @@ class MainController extends Controller
 
             $sum -= $creditPayment;
 
-            if ($month++ >= 12) {
+            if ($month++ >= static::MONTH_PER_YEAR) {
                 $month = 1;
                 $year++;
             }
