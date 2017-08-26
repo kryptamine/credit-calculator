@@ -35,15 +35,16 @@ class MainController extends Controller
         foreach (range(1, $range) as $i) {
             $percentPayment = round($sum * $monthRate, 2);
             $creditPayment  = round($payment - $percentPayment, 2);
-
-            $result[$i]['month']       = $month;
-            $result[$i]['year']        = $year;
-            $result[$i]['position']    = $i;
-            $result[$i]['debt']        = $sum;
-            $result[$i]['main_debt']   = $payment - $percentPayment;
-            $result[$i]['percent_pay'] = $percentPayment;
-            $result[$i]['credit_pay']  = $creditPayment;
-            $result[$i]['payment']     = $payment;
+            $result[$i]     = [
+                'position'        => $i,
+                'month'           => $month,
+                'year'            => $year,
+                'debt'            => $sum,
+                'main_debt'       => $payment - $percentPayment,
+                'percent_payment' => $percentPayment,
+                'credit_payment'  => $creditPayment,
+                'payment'         => $payment,
+            ];
 
             $sum -= $creditPayment;
 

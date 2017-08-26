@@ -62,7 +62,7 @@
                                     <td>{{ monthList[row.month - 1] }}, {{ row.year }}</td>
                                     <td>{{ row.main_debt }}</td>
                                     <td>{{ row.payment }}</td>
-                                    <td>{{ row.percent_pay }}</td>
+                                    <td>{{ row.percent_payment }}</td>
                                     <td>{{ row.debt }}</td>
                                 </tr>
                             </tbody>

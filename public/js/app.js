@@ -42125,7 +42125,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [(_vm.data.length) ? _c('table', {
     staticClass: "table"
   }, [_vm._m(0), _vm._v(" "), _c('tbody', _vm._l((_vm.data), function(row) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(row.position))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.monthList[row.month - 1]) + ", " + _vm._s(row.year))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.main_debt))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.payment))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.percent_pay))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.debt))])])
+    return _c('tr', [_c('td', [_vm._v(_vm._s(row.position))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.monthList[row.month - 1]) + ", " + _vm._s(row.year))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.main_debt))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.payment))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.percent_payment))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(row.debt))])])
   }))]) : _c('div', [_vm._v("Нет данных для отображения...")])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('th', [_vm._v("#")]), _vm._v(" "), _c('th', [_vm._v("Дата платежа")]), _vm._v(" "), _c('th', [_vm._v("Основной долг")]), _vm._v(" "), _c('th', [_vm._v("Сумма платежа")]), _vm._v(" "), _c('th', [_vm._v("Проценты")]), _vm._v(" "), _c('th', [_vm._v("Остаток долга")])])
