@@ -41937,7 +41937,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(response => {
                 this.data = response.data;
             }).catch(e => {
-                this.errors.push(e);
+                console.log(e);
             });
         }
     }
@@ -42105,8 +42105,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('button', {
     staticClass: "btn btn-success pull-right",
+    attrs: {
+      "type": "button"
+    },
     on: {
-      "click": _vm.calculate
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.calculate($event)
+      }
     }
   }, [_vm._v("Рассчитать")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-12"

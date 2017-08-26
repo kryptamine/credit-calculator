@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success pull-right" @click="calculate">Рассчитать</button>
+                                <button type="button" class="btn btn-success pull-right" @click.prevent="calculate">Рассчитать</button>
                             </div>
                         </form>
                     </div>
@@ -98,7 +98,7 @@
                 }).then(response => {
                     this.data = response.data
                 }).catch(e => {
-                    this.errors.push(e)
+                    console.log(e);
                 })
             }
         }
