@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('credit/calculate', 'MainController@calculate');
+Route::post('credit/calculate', 'MainController@calculate');

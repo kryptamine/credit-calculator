@@ -41932,9 +41932,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.form.month = index + 1;
         },
         calculate() {
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/credit/calculate', {
-                params: this.form
-            }).then(response => {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/credit/calculate', this.form).then(response => {
                 this.data = response.data;
             }).catch(e => {
                 console.log(e);

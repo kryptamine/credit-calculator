@@ -93,9 +93,7 @@
                 this.form.month = index + 1;
             },
             calculate() {
-                axios.get('/api/credit/calculate', {
-                    params: this.form
-                }).then(response => {
+                axios.post('/api/credit/calculate', this.form).then(response => {
                     this.data = response.data
                 }).catch(e => {
                     console.log(e);

@@ -5,18 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class RequestModel
+ * Class Payment
  * @package App\Models
  */
-class Request extends Model
+class Payment extends Model
 {
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'sum', 'rate', 'range', 'month', 'year',
+        'month', 'year', 'debt', 'main_debt', 'percent_payment', 'credit_payment', 'payment', 'position'
     ];
-
 }
