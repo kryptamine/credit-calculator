@@ -1,6 +1,9 @@
 Credit calculator
 ===================
+Simple credit calculator application
 
+ - Frontend - vuejs
+ - Backend - laravel
 
 ----------
 ## Nginx config example ##
@@ -40,15 +43,21 @@ server {
 ## Init ##
 
 ```
-#!
-
+#install composer dependencies
 composer install
 
+#run migration
 php artisan migrate
 
+#publish vendors
 php artisan vendor:publish
 
+#build front
 npm install
 
-npm run dev (or prod)
+#for development
+npm run dev
+
+#for production
+npm run prod
 ```
