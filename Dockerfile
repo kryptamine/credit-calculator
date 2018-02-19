@@ -1,3 +1,5 @@
+FROM php:7.1-fpm
+
 #install all the system dependencies and enable PHP modules
 RUN apt-get update && apt-get install -y \
       libicu-dev \
@@ -21,6 +23,9 @@ RUN apt-get update && apt-get install -y \
 
 #install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+
+#set our application folder as an environment variable
+ENV APP_HOME /var/www
 
 #copy source files and run composer
 COPY . $APP_HOME
